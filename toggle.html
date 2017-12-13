@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button>toggle</button>
+  <div style="width: 100px;height: 100px;background: #000;"></div>
+<script>
+  $('button').click(function(){
+    $('div').toggle(1000);
+  });
+</script> -->
+<button>fadeToggle</button>
+<div  style="display:none; width: 100px;height: 100px;background: #000;"></div>
+<script>
+// $('button').click(function(){
+//   $('div').animate({
+//     opacity: 0.1,
+//     width: '256px',
+//     height: '256px',
+//     color: '#888'
+//   },3000,function(){
+//
+//     console.log('动画已结束');
+//     //恢复初始化状态
+//     $(this).css('opacity','1.0').css('width','200px').css('height','200px');
+//   });
+// });
+$('button').click(function(){
+  $('div').show(2000).delay(2000).animate({
+    opacity: 0.25,
+    width: '256px',
+    height: '256px',
+    color: '#888'
+  },2000).delay(2000).animate({
+    width: '100px',
+    height: '100px'
+  },1000)
+});
+</script>
+</body>
+</html>

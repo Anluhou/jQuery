@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="关于前端探索、分享、记录、生活 |这里是 Wj 的个人博客，与你一起踏上前端之路。">
+  <meta name="keywords" content="吴杰, Wj吴杰, 安陆侯, 前端之路, 吴杰的博客, WjBlog, 博客, 个人网站, 互联网, Web, JavaScript, 前端">
+  <link rel="shortcut icon" href="IMG\wj_favicon.ico" type="image/x-icon" />
+  <link href="CSS/bootstrap-min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/wj-blog.css">
+  <link rel="stylesheet" href="CSS/trans.css">
+  <link rel="stylesheet"  media="screen and (max-width: 768px)" href="CSS/mobile.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    *{ margin:0; padding:0;}
+    body {font-size:12px;text-align:center;}
+    a { color:#04D; text-decoration:none;}
+    a:hover { color:#F50; text-decoration:underline;}
+    .SubCategoryBox {width:600px; margin:0 auto; text-align:center;margin-top:40px;}
+    .SubCategoryBox ul { list-style:none;}
+    .SubCategoryBox ul li { display:block; float:left; width:200px; line-height:20px;}
+    .showmore { clear:both; text-align:center;padding-top:10px;}
+    .showmore a { display:block; width:120px; margin:0 auto; line-height:24px; border:1px solid #AAA;}
+    .showmore a span { padding-left:15px; background:url(../img/down.gif) no-repeat 0 0;}
+    .promoted a { color:#F50;}
+  </style>
+<body>
+  <!-- <p>精简：</p>
+  <div class="SubCategoryBox">
+  	<ul>
+  		<li ><a href="#">佳能</a><i>(30440) </i></li>
+  		<li ><a href="#">索尼</a><i>(27220) </i></li>
+  		<li ><a href="#">三星</a><i>(20808) </i></li>
+  		<li ><a href="#">尼康</a><i>(17821) </i></li>
+  		<li ><a href="#">松下</a><i>(12289) </i></li>
+  		<li ><a href="#">卡西欧</a><i>(8242) </i></li>
+  		<li style="display:none"><a href="#">富士</a><i>(14894) </i></li>
+  		<li style="display:none"><a href="#">柯达</a><i>(9520) </i></li>
+  		<li style="display:none"><a href="#">宾得</a><i>(2195) </i></li>
+  		<li style="display:none"><a href="#">理光</a><i>(4114) </i></li>
+  		<li style="display:none"><a href="#">奥林巴斯</a><i>(12205) </i></li>
+  		<li style="display:none"><a href="#">明基</a><i>(1466) </i></li>
+  		<li style="display:none"><a href="#">爱国者</a><i>(3091) </i></li>
+  		<li ><a href="#">其它品牌相机</a><i>(7275) </i></li>
+  	</ul>
+  	<div class="showmore">
+  		<a href="more.html"><span>显示全部品牌</span></a>
+  	</div>
+  </div>
+
+  <br/> -->
+<p>全部：</p>
+  <div class="SubCategoryBox">
+  	<ul>
+  		<li ><a href="#">佳能</a><i>(30440) </i></li>
+  		<li ><a href="#">索尼</a><i>(27220) </i></li>
+  		<li ><a href="#">三星</a><i>(20808) </i></li>
+  		<li ><a href="#">尼康</a><i>(17821) </i></li>
+  		<li ><a href="#">松下</a><i>(12289) </i></li>
+  		<li ><a href="#">卡西欧</a><i>(8242) </i></li>
+  		<li ><a href="#">富士</a><i>(14894) </i></li>
+  		<li ><a href="#">柯达</a><i>(9520) </i></li>
+  		<li ><a href="#">宾得</a><i>(2195) </i></li>
+  		<li ><a href="#">理光</a><i>(4114) </i></li>
+  		<li ><a href="#">奥林巴斯</a><i>(12205) </i></li>
+  		<li ><a href="#">明基</a><i>(1466) </i></li>
+  		<li ><a href="#">爱国者</a><i>(3091) </i></li>
+  		<li ><a href="#">其它品牌相机</a><i>(7275) </i></li>
+  	</ul>
+  	<div class="showmore">
+  		<a href=""><span>精简显示品牌</span></a>
+  	</div>
+  </div>
+  <script>
+    $(function(){
+      var $category = $("ul li:gt(5):not(:last)");//获得索引值大于5(实际为6)的品牌集合对象，除最后一条。
+      var $toggleBtn = $('div.showmore>a');
+
+      $category.hide();
+
+      $toggleBtn.click(function(){
+        if($category.is(':visible')){//判断元素是否显示
+          $category.hide();
+          $(this).find('span').text('显示全部品牌');
+          $('ul li').removeClass('promoted');//removeClass删除类与addClass相反
+        }else{
+          $category.show();
+          $(this).find('span').text('精简显示品牌');//find会在元素内寻找匹配元素
+          $('ul li').filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')").addClass('promoted');//filter对自身(ul li)子集元素进行筛选
+        }
+        return false; //超链接不跳转！(由于给超链接添加onclick事件。因此需要return false语句让浏览器认为用户没有单击该超链接，从而阻止该超链接跳转)
+      })
+    })
+  </script>
+</body>
+</html>
